@@ -21,6 +21,7 @@
 		0D9679192C0CB8CF009E8C48 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679182C0CB8CF009E8C48 /* MovieListViewModel.swift */; };
 		0D96791B2C0CBE2F009E8C48 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96791A2C0CBE2F009E8C48 /* MovieListView.swift */; };
 		0D96791F2C0CBF54009E8C48 /* FetchMoviesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96791E2C0CBF54009E8C48 /* FetchMoviesUseCaseImpl.swift */; };
+		0D9679212C0CC733009E8C48 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679202C0CC733009E8C48 /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0D9679182C0CB8CF009E8C48 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		0D96791A2C0CBE2F009E8C48 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		0D96791E2C0CBF54009E8C48 /* FetchMoviesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMoviesUseCaseImpl.swift; sourceTree = "<group>"; };
+		0D9679202C0CC733009E8C48 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0D96791D2C0CBF37009E8C48 /* UseCases */,
+				0D9679202C0CC733009E8C48 /* DIContainer.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				0D9679012C0CA74A009E8C48 /* Configuration.swift in Sources */,
 				0D9678F22C0CA5DD009E8C48 /* ContentView.swift in Sources */,
 				0D9679072C0CB12D009E8C48 /* Movie.swift in Sources */,
+				0D9679212C0CC733009E8C48 /* DIContainer.swift in Sources */,
 				0D9679102C0CB514009E8C48 /* MovieRepository.swift in Sources */,
 				0D9678F02C0CA5DD009E8C48 /* MovieDBApp.swift in Sources */,
 				0D9679142C0CB6C7009E8C48 /* MovieRepositoryImpl.swift in Sources */,

@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let container: DIContainer
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MovieListView(viewModel: container.makeMovieListViewModel())
     }
-}
-
-#Preview {
-    ContentView()
 }

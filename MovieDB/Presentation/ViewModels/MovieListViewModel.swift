@@ -29,6 +29,7 @@ class MovieListViewModel: ObservableObject {
                     break
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
+                    print(error)
                 }
             }, receiveValue: { movies in
                 self.movies = movies
