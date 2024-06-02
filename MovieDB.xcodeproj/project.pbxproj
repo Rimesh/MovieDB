@@ -11,6 +11,7 @@
 		0D9678F22C0CA5DD009E8C48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9678F12C0CA5DD009E8C48 /* ContentView.swift */; };
 		0D9678F42C0CA5DE009E8C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D9678F32C0CA5DE009E8C48 /* Assets.xcassets */; };
 		0D9678F72C0CA5DE009E8C48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D9678F62C0CA5DE009E8C48 /* Preview Assets.xcassets */; };
+		0D9678FF2C0CA62A009E8C48 /* NetworkSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0D9678FE2C0CA62A009E8C48 /* NetworkSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9678FF2C0CA62A009E8C48 /* NetworkSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = MovieDB;
+			packageProductDependencies = (
+				0D9678FE2C0CA62A009E8C48 /* NetworkSDK */,
+			);
 			productName = MovieDB;
 			productReference = 0D9678EC2C0CA5DD009E8C48 /* MovieDB.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 0D9678E32C0CA5DD009E8C48;
+			packageReferences = (
+				0D9678FD2C0CA62A009E8C48 /* XCRemoteSwiftPackageReference "NetworkSDK" */,
+			);
 			productRefGroup = 0D9678ED2C0CA5DD009E8C48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0D9678FD2C0CA62A009E8C48 /* XCRemoteSwiftPackageReference "NetworkSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rimesh/NetworkSDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D9678FE2C0CA62A009E8C48 /* NetworkSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D9678FD2C0CA62A009E8C48 /* XCRemoteSwiftPackageReference "NetworkSDK" */;
+			productName = NetworkSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0D9678E42C0CA5DD009E8C48 /* Project object */;
 }

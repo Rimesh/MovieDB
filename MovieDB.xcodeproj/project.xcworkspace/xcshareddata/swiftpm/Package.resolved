@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networksdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rimesh/NetworkSDK.git",
+      "state" : {
+        "revision" : "9a7eef24f1f699d28cb501d0f40b5a8d79cb60b7",
+        "version" : "0.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
