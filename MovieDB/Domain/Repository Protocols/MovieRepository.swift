@@ -9,5 +9,5 @@ import Combine
 import NetworkSDK
 
 protocol MovieRepository {
-    func getMovies() -> AnyPublisher<[Movie], NetworkError>
+    func getMovies(page: Int, language: String) -> AnyPublisher<[Movie], NetworkError>
 }
