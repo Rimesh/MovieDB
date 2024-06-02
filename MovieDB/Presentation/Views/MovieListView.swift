@@ -16,9 +16,18 @@ struct MovieListView: View {
 
     var body: some View {
         VStack {
-            Text("Now playing")
-            List(viewModel.movies) { movie in
-                Text(movie.title)
+            Text("Latest releases")
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(viewModel.movies) { movie in
+                        MovieInfoCell(
+                            movieImage: "bunny",
+                            title: movie.title,
+                            releaseDate: movie.releaseDate,
+                            rating: "\(movie.popularity)"
+                        )
+                    }
+                }
             }
         }
         .padding()

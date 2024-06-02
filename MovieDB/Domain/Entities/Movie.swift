@@ -9,14 +9,14 @@ import Foundation
 
 struct Movie: Codable, Identifiable {
     let adult: Bool
-    let backdrop_path: String?
-    let genre_ids: [Int]?
+    let backdropPath: String
+    let genreIds: [Int]
     let id: Int
-    let original_language: String?
-    let original_title: String?
+    let originalLanguage: String
+    let originalTitle: String
     let overview: String
     let popularity: Double
-    let poster_path: String?
-    let release_date: String?
+    let posterPath: String
+    let releaseDate: String
     let title: String
 }
