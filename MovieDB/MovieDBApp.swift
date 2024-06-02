@@ -5,8 +5,8 @@
 //  Created by Rimesh Jotaniya on 02/06/24.
 //
 
-import SwiftUI
 import NetworkSDK
+import SwiftUI
 
 @main
 struct MovieDBApp: App {

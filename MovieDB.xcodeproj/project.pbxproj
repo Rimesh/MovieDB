@@ -13,6 +13,8 @@
 		0D9678F72C0CA5DE009E8C48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D9678F62C0CA5DE009E8C48 /* Preview Assets.xcassets */; };
 		0D9678FF2C0CA62A009E8C48 /* NetworkSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0D9678FE2C0CA62A009E8C48 /* NetworkSDK */; };
 		0D9679012C0CA74A009E8C48 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679002C0CA74A009E8C48 /* Configuration.swift */; };
+		0D9679072C0CB12D009E8C48 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679062C0CB12D009E8C48 /* Movie.swift */; };
+		0D9679092C0CB154009E8C48 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679082C0CB154009E8C48 /* BaseResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0D9679002C0CA74A009E8C48 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		0D9679022C0CA7AE009E8C48 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0D9679032C0CA91C009E8C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0D9679062C0CB12D009E8C48 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		0D9679082C0CB154009E8C48 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 				0D9679032C0CA91C009E8C48 /* Info.plist */,
 				0D9678EF2C0CA5DD009E8C48 /* MovieDBApp.swift */,
 				0D9678F12C0CA5DD009E8C48 /* ContentView.swift */,
+				0D9679052C0CB09B009E8C48 /* Domain */,
 				0D9679002C0CA74A009E8C48 /* Configuration.swift */,
 				0D9679022C0CA7AE009E8C48 /* Config.xcconfig */,
 				0D9678F32C0CA5DE009E8C48 /* Assets.xcassets */,
@@ -74,6 +79,15 @@
 				0D9678F62C0CA5DE009E8C48 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D9679052C0CB09B009E8C48 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D9679062C0CB12D009E8C48 /* Movie.swift */,
+				0D9679082C0CB154009E8C48 /* BaseResponse.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9679092C0CB154009E8C48 /* BaseResponse.swift in Sources */,
 				0D9679012C0CA74A009E8C48 /* Configuration.swift in Sources */,
 				0D9678F22C0CA5DD009E8C48 /* ContentView.swift in Sources */,
+				0D9679072C0CB12D009E8C48 /* Movie.swift in Sources */,
 				0D9678F02C0CA5DD009E8C48 /* MovieDBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
