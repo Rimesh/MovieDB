@@ -10,6 +10,6 @@ import SwiftUI
 struct ContentView: View {
     let container: DIContainer
     var body: some View {
-        MovieListView(viewModel: container.makeMovieListViewModel())
+        MovieListView(viewModel: container.movieViewModelFactory.makeMovieListViewModel())
     }
 }

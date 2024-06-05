@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MovieListView: View {
+    @EnvironmentObject private var viewModelFactory: MovieViewModelFactory
     @ObservedObject private var viewModel: MovieListViewModel
 
     init(viewModel: MovieListViewModel) {
@@ -27,24 +28,20 @@ struct MovieListView: View {
                     spacing: 20
                 ) {
                     ForEach(viewModel.movies) { movie in
-                        VStack {
-                            NavigationLink {
-                                Text("Movie Details")
-                            } label: {
-                                MovieInfoView(
-                                    posterPath: movie.posterPath,
-                                    title: movie.title,
-                                    releaseDate: movie.releaseDate,
-                                    rating: "\(movie.popularity)"
-                                )
-                                .clipped()
-                            }
-                            .buttonStyle(PlainButtonStyle())
-
-                            Button("Details") {
-                                viewModel.fetchMovieDetails(movieId: movie.id)
-                            }
+                        NavigationLink {
+                            MovieDetailsView(
+                                viewModel: viewModelFactory.makeMovieDetailsViewModel(movieId: movie.id)
+                            )
+                        } label: {
+                            MovieInfoView(
+                                posterPath: movie.posterPath,
+                                title: movie.title,
+                                releaseDate: movie.releaseDate,
+                                rating: "\(movie.popularity)"
+                            )
+                            .clipped()
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal)
