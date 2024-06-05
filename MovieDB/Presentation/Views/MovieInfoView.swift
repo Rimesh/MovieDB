@@ -7,19 +7,17 @@
 
 import SwiftUI
 
-struct MovieInfoCell: View {
-    let movieImage: String
+struct MovieInfoView: View {
+    let posterPath: String
     let title: String
     let releaseDate: String
     let rating: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Image(movieImage)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 235)
-                .padding(.bottom, 10)
+        VStack(alignment: .leading, spacing: 8) {
+            if let url = URLHelper.posterImageURL(from: posterPath) {
+                AsyncImageView(url: url)
+            }
 
             VStack(alignment: .leading) {
                 Text(title)
@@ -31,17 +29,13 @@ struct MovieInfoCell: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
-            .padding(.horizontal)
-            .overlay(
-                Rectangle()
-                    .stroke(Color.red, lineWidth: 2)
-            )
+            .padding(.horizontal, 8)
+            .padding(.top, 4)
             Spacer()
         }
-        .frame(width: 200, height: 350)
         .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
-        .padding(.all, 10)
+        .cornerRadius(8)
+        .shadow(radius: 4)
+        .padding(.all, 8)
     }
 }

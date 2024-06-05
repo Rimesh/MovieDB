@@ -14,22 +14,33 @@ struct MovieListView: View {
         self.viewModel = viewModel
     }
 
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+
     var body: some View {
-        VStack {
-            Text("Latest releases")
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(viewModel.movies) { movie in
-                        MovieInfoCell(
-                            movieImage: "bunny",
-                            title: movie.title,
-                            releaseDate: movie.releaseDate,
-                            rating: "\(movie.popularity)"
-                        )
+        GeometryReader { _ in
+            VStack {
+                Text("Latest releases")
+                ScrollView(showsIndicators: false) {
+                    LazyVGrid(
+                        columns: columns,
+                        spacing: 20
+                    ) {
+                        ForEach(viewModel.movies) { movie in
+                            MovieInfoView(
+                                posterPath: movie.posterPath,
+                                title: movie.title,
+                                releaseDate: movie.releaseDate,
+                                rating: "\(movie.popularity)"
+                            )
+                            .clipped()
+                        }
                     }
+                    .padding(.horizontal)
                 }
             }
         }
-        .padding()
     }
 }
