@@ -34,9 +34,9 @@ struct MovieInfoView: View {
             .padding(.top, 4)
             Spacer()
         }
-        .background(Color.white)
+        .background(Color(uiColor: .systemBackground))
         .cornerRadius(8)
-        .shadow(radius: 4)
+        .shadow(color: Color(uiColor: .separator), radius: 4)
         .padding(.all, 8)
     }
 }

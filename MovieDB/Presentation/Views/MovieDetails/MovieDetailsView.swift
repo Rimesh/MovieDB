@@ -64,10 +64,6 @@ struct MovieDetailsView: View {
             {
                 AsyncImageView(url: url)
                     .frame(maxWidth: .infinity)
-                    .overlay {
-                        Rectangle()
-                            .strokeBorder(style: .init(lineWidth: 1))
-                    }
             } else {
                 EmptyView()
             }

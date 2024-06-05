@@ -8,20 +8,31 @@
 import SwiftUI
 
 struct ShimmerView: View {
-    @State private var phase: CGFloat = 0
+    @State private var startPoint = UnitPoint(x: -1.8, y: -1.2)
+    @State private var endPoint = UnitPoint(x: 0, y: -0.2)
+    var speed: CGFloat = 1
+    var colors: [Color] = [
+        Color(uiColor: .systemGray5),
+        Color(uiColor: .systemGray6),
+        Color(uiColor: .systemGray5),
+    ]
 
     var body: some View {
-        Rectangle()
-            .fill(
-                LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color.gray.opacity(0.1), Color.gray.opacity(0.3)]),
-                               startPoint: .leading,
-                               endPoint: .trailing)
-            )
-            .rotationEffect(Angle(degrees: 30))
-            .mask(Rectangle().cornerRadius(8))
-            .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: phase)
-            .onAppear {
-                phase = 1
-            }
+        LinearGradient(
+            colors: colors,
+            startPoint: startPoint,
+            endPoint: endPoint
+        )
+        .onAppear(perform: loopAnimation)
+    }
+
+    private func loopAnimation() {
+        withAnimation(
+            .easeInOut(duration: speed)
+                .repeatForever(autoreverses: false)
+        ) {
+            startPoint = .init(x: 1, y: 1)
+            endPoint = .init(x: 2.2, y: 2.2)
+        }
     }
 }

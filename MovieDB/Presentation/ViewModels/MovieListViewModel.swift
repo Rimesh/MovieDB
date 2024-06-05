@@ -10,8 +10,8 @@ import NetworkSDK
 
 class MovieListViewModel: ObservableObject {
     @Published var movies: [Movie] = []
-    @Published var errorMessage: String?
-    let languageCode = Locale.current.language
+    @Published var showErrorAlert = false
+    private(set) var errorMessage: String = ""
 
     private let fetchMoviesUseCase: FetchMoviesUseCase
     private var cancellables = Set<AnyCancellable>()
@@ -32,7 +32,7 @@ class MovieListViewModel: ObservableObject {
                     break
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
-                    print(error)
+                    self.showErrorAlert = true
                 }
             }, receiveValue: { movies in
                 self.movies = movies

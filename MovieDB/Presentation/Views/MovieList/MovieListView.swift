@@ -46,7 +46,10 @@ struct MovieListView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Latest releases")
+            .navigationTitle("Now Playing")
+            .alert(viewModel.errorMessage, isPresented: $viewModel.showErrorAlert) {
+                Button("OK") {}
+            }
         }
     }
 }
