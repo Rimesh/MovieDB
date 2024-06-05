@@ -14,6 +14,7 @@ class DIContainer {
 
     let movieRepository: MovieRepository
     let fetchMoviesUseCase: FetchMoviesUseCase
+    let fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
 
     init() {
         networkConfiguration = NetworkConfiguration(
@@ -24,9 +25,13 @@ class DIContainer {
 
         movieRepository = MovieRepositoryImpl(networkManager: networkManager)
         fetchMoviesUseCase = FetchMoviesUseCaseImpl(repository: movieRepository)
+        fetchMovieDetailsUseCase = FetchMovieDetailsUseCaseImpl(repository: movieRepository)
     }
 
     func makeMovieListViewModel() -> MovieListViewModel {
-        return MovieListViewModel(fetchMoviesUseCase: fetchMoviesUseCase)
+        return MovieListViewModel(
+            fetchMoviesUseCase: fetchMoviesUseCase,
+            fetchMovieDetailsUseCase: fetchMovieDetailsUseCase
+        )
     }
 }

@@ -27,18 +27,24 @@ struct MovieListView: View {
                     spacing: 20
                 ) {
                     ForEach(viewModel.movies) { movie in
-                        NavigationLink {
-                            Text("Movie Details")
-                        } label: {
-                            MovieInfoView(
-                                posterPath: movie.posterPath,
-                                title: movie.title,
-                                releaseDate: movie.releaseDate,
-                                rating: "\(movie.popularity)"
-                            )
-                            .clipped()
+                        VStack {
+                            NavigationLink {
+                                Text("Movie Details")
+                            } label: {
+                                MovieInfoView(
+                                    posterPath: movie.posterPath,
+                                    title: movie.title,
+                                    releaseDate: movie.releaseDate,
+                                    rating: "\(movie.popularity)"
+                                )
+                                .clipped()
+                            }
+                            .buttonStyle(PlainButtonStyle())
+
+                            Button("Details") {
+                                viewModel.fetchMovieDetails(movieId: movie.id)
+                            }
                         }
-                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal)
