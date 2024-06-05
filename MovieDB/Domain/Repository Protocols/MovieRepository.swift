@@ -10,4 +10,5 @@ import NetworkSDK
 
 protocol MovieRepository {
     func getMovies(page: Int, language: String) -> AnyPublisher<[Movie], NetworkError>
+    func getMovieDetails(movieId: Int, language: String) -> AnyPublisher<MovieDetail, NetworkError>
 }

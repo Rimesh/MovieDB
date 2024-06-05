@@ -33,4 +33,16 @@ class MovieRepositoryImpl: MovieRepository {
             }
             .eraseToAnyPublisher()
     }
+
+    func getMovieDetails(movieId: Int, language: String) -> AnyPublisher<MovieDetail, NetworkError> {
+        let endPoint = Endpoint(
+            path: "/3/movie/\(movieId)",
+            method: .get,
+            authorization: .apiKey,
+            queryItems: [
+                .init(name: "language", value: language),
+            ]
+        )
+        return networkManager.get(type: MovieDetail.self, endPoint: endPoint)
+    }
 }
