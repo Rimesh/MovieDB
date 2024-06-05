@@ -1,5 +1,5 @@
 //
-//  FetchMoviesUseCaseImpl.swift
+//  FetchNowPlayingMoviesUseCaseImpl.swift
 //  MovieDB
 //
 //  Created by Rimesh Jotaniya on 02/06/24.
