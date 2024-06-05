@@ -1,14 +1,14 @@
 //
-//  FetchMoviesUseCaseImpl.swift
+//  FetchPopularMoviesUseCaseImpl.swift
 //  MovieDB
 //
-//  Created by Rimesh Jotaniya on 02/06/24.
+//  Created by Rimesh Jotaniya on 05/06/24.
 //
 
 import Combine
 import NetworkSDK
 
-class FetchNowPlayingMoviesUseCaseImpl: FetchMoviesUseCase {
+class FetchPopularMoviesUseCaseImpl: FetchMoviesUseCase {
     private let repository: MovieRepository
 
     init(repository: MovieRepository) {
@@ -16,6 +16,6 @@ class FetchNowPlayingMoviesUseCaseImpl: FetchMoviesUseCase {
     }
 
     func execute(page: Int, language: String) -> AnyPublisher<[Movie], NetworkError> {
-        return repository.getNowPlayingMovies(page: page, language: language)
+        return repository.getPopularMovies(page: page, language: language)
     }
 }

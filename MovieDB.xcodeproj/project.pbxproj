@@ -32,6 +32,7 @@
 		0D9679322C106415009E8C48 /* MovieViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679312C106415009E8C48 /* MovieViewModelFactory.swift */; };
 		0D9679342C1064BE009E8C48 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679332C1064BE009E8C48 /* MovieDetailsViewModel.swift */; };
 		0D9679392C1069F1009E8C48 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9679382C1069F1009E8C48 /* MovieDetailsView.swift */; };
+		0D96793B2C10925A009E8C48 /* FetchPopularMoviesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96793A2C10925A009E8C48 /* FetchPopularMoviesUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		0D9679312C106415009E8C48 /* MovieViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelFactory.swift; sourceTree = "<group>"; };
 		0D9679332C1064BE009E8C48 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		0D9679382C1069F1009E8C48 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		0D96793A2C10925A009E8C48 /* FetchPopularMoviesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopularMoviesUseCaseImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				0D96791E2C0CBF54009E8C48 /* FetchMoviesUseCaseImpl.swift */,
+				0D96793A2C10925A009E8C48 /* FetchPopularMoviesUseCaseImpl.swift */,
 				0D96792E2C10374C009E8C48 /* FetchMovieDetailsUseCaseImpl.swift */,
 			);
 			path = UseCases;
@@ -347,6 +350,7 @@
 				0D9679342C1064BE009E8C48 /* MovieDetailsViewModel.swift in Sources */,
 				0D96791F2C0CBF54009E8C48 /* FetchMoviesUseCaseImpl.swift in Sources */,
 				0D96792F2C10374C009E8C48 /* FetchMovieDetailsUseCaseImpl.swift in Sources */,
+				0D96793B2C10925A009E8C48 /* FetchPopularMoviesUseCaseImpl.swift in Sources */,
 				0D96792B2C1034E2009E8C48 /* FetchMovieDetailsUseCase.swift in Sources */,
 				0D9679272C1024D8009E8C48 /* ShimmerView.swift in Sources */,
 				0D96790D2C0CB343009E8C48 /* FetchMoviesUseCase.swift in Sources */,

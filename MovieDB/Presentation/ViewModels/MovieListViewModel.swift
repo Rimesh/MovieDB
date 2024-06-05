@@ -12,13 +12,16 @@ class MovieListViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var showErrorAlert = false
     private(set) var errorMessage: String = ""
+    private(set) var navigationTitle: String
 
     private let fetchMoviesUseCase: FetchMoviesUseCase
     private var cancellables = Set<AnyCancellable>()
 
     init(
+        navigationTitle: String,
         fetchMoviesUseCase: FetchMoviesUseCase
     ) {
+        self.navigationTitle = navigationTitle
         self.fetchMoviesUseCase = fetchMoviesUseCase
         fetchMovies(page: 1)
     }

@@ -13,7 +13,8 @@ class DIContainer {
     private let networkManager: NetworkManager
 
     private let movieRepository: MovieRepository
-    private let fetchMoviesUseCase: FetchMoviesUseCase
+    private let fetchNowPlayingMoviesUseCase: FetchMoviesUseCase
+    private let fetchPopularMoviesUseCase: FetchMoviesUseCase
     private let fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
 
     let movieViewModelFactory: MovieViewModelFactory
@@ -26,11 +27,13 @@ class DIContainer {
         networkManager = NetworkManager(configuration: networkConfiguration)
 
         movieRepository = MovieRepositoryImpl(networkManager: networkManager)
-        fetchMoviesUseCase = FetchMoviesUseCaseImpl(repository: movieRepository)
+        fetchNowPlayingMoviesUseCase = FetchNowPlayingMoviesUseCaseImpl(repository: movieRepository)
+        fetchPopularMoviesUseCase = FetchPopularMoviesUseCaseImpl(repository: movieRepository)
         fetchMovieDetailsUseCase = FetchMovieDetailsUseCaseImpl(repository: movieRepository)
 
         movieViewModelFactory = .init(
-            fetchMoviesUseCase: fetchMoviesUseCase,
+            fetchNowPlayingMoviesUseCase: fetchNowPlayingMoviesUseCase,
+            fetchPopularMoviesUseCase: fetchPopularMoviesUseCase,
             fetchMovieDetailsUseCase: fetchMovieDetailsUseCase
         )
     }

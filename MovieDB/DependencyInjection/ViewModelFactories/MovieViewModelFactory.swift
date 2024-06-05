@@ -8,19 +8,38 @@
 import SwiftUI
 
 class MovieViewModelFactory: ObservableObject {
-    private let fetchMoviesUseCase: FetchMoviesUseCase
+    private let fetchNowPlayingMoviesUseCase: FetchMoviesUseCase
+    private let fetchPopularMoviesUseCase: FetchMoviesUseCase
     private let fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
 
-    init(fetchMoviesUseCase: FetchMoviesUseCase, fetchMovieDetailsUseCase: FetchMovieDetailsUseCase) {
-        self.fetchMoviesUseCase = fetchMoviesUseCase
+    init(
+        fetchNowPlayingMoviesUseCase: FetchMoviesUseCase,
+        fetchPopularMoviesUseCase: FetchMoviesUseCase,
+        fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
+    ) {
+        self.fetchNowPlayingMoviesUseCase = fetchNowPlayingMoviesUseCase
+        self.fetchPopularMoviesUseCase = fetchPopularMoviesUseCase
         self.fetchMovieDetailsUseCase = fetchMovieDetailsUseCase
     }
 
-    func makeMovieListViewModel() -> MovieListViewModel {
-        return MovieListViewModel(fetchMoviesUseCase: fetchMoviesUseCase)
+    func makeNowPlayingMoviesListViewModel() -> MovieListViewModel {
+        return MovieListViewModel(
+            navigationTitle: "Now Playing",
+            fetchMoviesUseCase: fetchNowPlayingMoviesUseCase
+        )
+    }
+
+    func makePopularMoviesListViewModel() -> MovieListViewModel {
+        return MovieListViewModel(
+            navigationTitle: "Popular",
+            fetchMoviesUseCase: fetchPopularMoviesUseCase
+        )
     }
 
     func makeMovieDetailsViewModel(movieId: Int) -> MovieDetailsViewModel {
-        return MovieDetailsViewModel(movieId: movieId, fetchMovieDetailsUseCase: fetchMovieDetailsUseCase)
+        return MovieDetailsViewModel(
+            movieId: movieId,
+            fetchMovieDetailsUseCase: fetchMovieDetailsUseCase
+        )
     }
 }

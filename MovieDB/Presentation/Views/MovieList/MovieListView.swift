@@ -46,7 +46,7 @@ struct MovieListView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Now Playing")
+            .navigationTitle(viewModel.navigationTitle)
             .alert(viewModel.errorMessage, isPresented: $viewModel.showErrorAlert) {
                 Button("OK") {}
             }
