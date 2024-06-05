@@ -25,6 +25,5 @@ struct AsyncImageView: View {
                 EmptyView()
             }
         }
-        .frame(height: 220)
     }
 }

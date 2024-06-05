@@ -17,6 +17,7 @@ struct MovieInfoView: View {
         VStack(alignment: .leading, spacing: 8) {
             if let url = URLHelper.posterImageURL(from: posterPath) {
                 AsyncImageView(url: url)
+                    .frame(height: 220)
             }
 
             VStack(alignment: .leading) {

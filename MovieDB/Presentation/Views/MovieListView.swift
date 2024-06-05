@@ -20,15 +20,16 @@ struct MovieListView: View {
     ]
 
     var body: some View {
-        GeometryReader { _ in
-            VStack {
-                Text("Latest releases")
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(
-                        columns: columns,
-                        spacing: 20
-                    ) {
-                        ForEach(viewModel.movies) { movie in
+        NavigationView {
+            ScrollView {
+                LazyVGrid(
+                    columns: columns,
+                    spacing: 20
+                ) {
+                    ForEach(viewModel.movies) { movie in
+                        NavigationLink {
+                            Text("Movie Details")
+                        } label: {
                             MovieInfoView(
                                 posterPath: movie.posterPath,
                                 title: movie.title,
@@ -37,10 +38,12 @@ struct MovieListView: View {
                             )
                             .clipped()
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .padding(.horizontal)
                 }
+                .padding(.horizontal)
             }
+            .navigationTitle("Latest releases")
         }
     }
 }
